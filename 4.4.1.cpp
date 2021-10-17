@@ -29,11 +29,17 @@ form of the letter.
 ** Test Phase 2 - Print a vertical line in column 3 in a 5*7 field.
 ** Test Phase 3 - Initialize a 5*7 array with true or false values and print an asterisk border.
 ** Test Phase 4 - Create a Letter Class and an Alphabet Class. Print the Letter L; 
+** Test Phase 5 - Create a Letter Class and an Alphabet Class. Print the Letter I;
+** Test Phase 6 - Create a Letter Class and an Alphabet Class. Print the Letter A;
+** Test Phase 7 - Create a Letter Class and an Alphabet Class. Print the Letter N;
+** Test Phase 8 - Collect string input ;
 */
+#include "Alphabet.h"
 #include <iostream>
 #include <chrono>
 #include <thread>
-#include "Alphabet.h"
+#include <string>
+
 using namespace std;
 void closeInXSeconds(int);
 void eraseInLine();
@@ -55,11 +61,72 @@ const char* MAIN_SCREEN_BUFFER = "?1049l";
 int main() {
 	cout << ESC << ALTERNATE_SCREEN_BUFFER; /*Switch to a clean alternate buffer*/
 	cout << ESC << "H"; //Position cursor at top of screen.
-	int user_selected_test = 0;
-	cout << "Choose a Test Number: 1,2,3";
-	cin >> user_selected_test;
-	runTest(user_selected_test);
-	cout << endl;
+	Alphabet* alphabet = new Alphabet();
+	//Initialize char* user_input
+	//If string equals "test" run test prompt.
+	//else print each character. 
+
+	string user_input = "";
+	cin >> user_input;
+	if (user_input == "test") {
+		int user_selected_test = 0;
+		cout << "Choose a Test Number: 1,2,3";
+		cin >> user_selected_test;
+		runTest(user_selected_test);
+		cout << endl;
+	}
+	else {
+		for (string::iterator itr = user_input.begin(); itr != user_input.end(); itr++) {
+			switch (*itr) {
+			case 'A':
+			case 'a':
+				alphabet->printLetter(alphabet->A());
+				break;
+			case 'B':
+			case 'b':
+				alphabet->symbolNotDefined();
+				break;
+			case 'C':
+			case 'c':
+				alphabet->printLetter(alphabet->C());
+				break;
+			case 'D':
+			case 'd':
+				alphabet->symbolNotDefined();
+				break;
+			case 'E':
+			case 'e':
+				alphabet->printLetter(alphabet->E());
+				break;
+			case 'F':
+			case 'f':
+				alphabet->symbolNotDefined();
+				break;
+			case 'I':
+			case 'i':
+				alphabet->printLetter(alphabet->I());
+				break;
+			case 'L':
+			case 'l':
+				alphabet->printLetter(alphabet->L());
+				break;
+			case 'M':
+			case 'm':
+				alphabet->printLetter(alphabet->M());
+			case 'N':
+			case 'n':
+				if(itr+1!= user_input.end())
+				alphabet->printLetter(alphabet->N());
+				break;
+			default:
+				cout << "default case";
+				alphabet->symbolNotDefined();
+			}
+			cout << endl;
+		}
+
+	}
+	
 	closeInXSeconds(30);
 	cout << ESC << MAIN_SCREEN_BUFFER; /*Return to main buffer*/
 	return 0;
@@ -134,9 +201,7 @@ void testPhase3() {
 }
 void testPhase4() {
 	Alphabet alpha = Alphabet();
-	alpha.printLetter( alpha.L());
-	alpha.printLetter(alpha.I());
-	alpha.printLetter(alpha.A());
+	alpha.printAlphabet();
 }
 
 

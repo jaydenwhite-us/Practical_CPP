@@ -28,6 +28,7 @@ form of the letter.
 			relative to the last cursor location.
 ** Test Phase 2 - Print a vertical line in column 3 in a 5*7 field.
 ** Test Phase 3 - Initialize a 5*7 array with true or false values and print an asterisk border.
+** Test Phase 4 - Create a Letter Class and an Alphabet Class. Print the Letter L; 
 */
 #include <iostream>
 #include <chrono>
@@ -44,6 +45,7 @@ void setColumnAs(bool* r, const int row_length, const int column, const bool boo
 void testPhase1();
 void testPhase2();
 void testPhase3();
+void testPhase4();
 void saveCursorPosition();
 void reportCursor();
 const char* ESC = "\x1b[";
@@ -76,6 +78,10 @@ void runTest(int whichTest) {
 	case 3:
 		cout << "Running Test " << whichTest << endl;
 		testPhase3();
+		break;
+	case 4:
+		cout << "Running Test " << whichTest << endl;
+		testPhase4();
 		break;
 	default:
 		cout << "Test Number Not Defined";
@@ -126,6 +132,12 @@ void testPhase3() {
 	}
 
 }
+void testPhase4() {
+	Alphabet alpha = Alphabet();
+	alpha.printLetter( alpha.L());
+	alpha.printLetter(alpha.I());
+	alpha.printLetter(alpha.A());
+}
 
 
 void saveCursorPosition() { cout << "\x1B[s"; }
@@ -140,6 +152,7 @@ void closeInXSeconds(int seconds) {
 		this_thread::sleep_for(chrono::milliseconds(1000));
 	}
 }
+
 void initializeAs(bool* r, int length, bool boolean) {
 	for (int i = 0; i < length; i++)r[i] = boolean;
 }
@@ -149,7 +162,6 @@ void setRowAs(bool* r, const int row_length, const int row, const bool boolean) 
 		r[(row_length*row + i)] = boolean;
 	}
 }
-
 void setColumnAs(bool* r, const int row_length, const int column, const bool boolean, const int column_height) {
 	for (int i = 0; i < column_height; i++) r[(row_length*i + column)] = true;
 }

@@ -2,6 +2,7 @@
 #include "Alphabet.h"
 #include "Letter.h"
 #include <iostream>
+#include <thread>
 using namespace std;
 
 const bool* Alphabet::A() {
@@ -12,6 +13,24 @@ const bool* Alphabet::A() {
 
 	letter->setRowAs(0, true); //Set first row as true
 	letter->setRowAs(letter->column_height / 2, true); //Set middle row as true;
+	return letter->field;
+}
+const bool* Alphabet::C() {
+	Letter* letter = new Letter();
+	/*Draw a block C*/
+	letter->setColumnAs(0, true); //Set first column as true
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height -1, true); //Set middle last as true;
+	return letter->field;
+}
+const bool* Alphabet::E() {
+	Letter* letter = new Letter();
+	/*Draw a block E*/
+	letter->setColumnAs(0, true); //Set first column as true
+
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height/ 2, true); //Set middle row as true
+	letter->setRowAs(letter->column_height - 1, true); //Set last row as true
 	return letter->field;
 }
 const bool* Alphabet::I() {
@@ -28,18 +47,33 @@ const bool* Alphabet::I() {
 	}//Set middle Column as True;
 	return letter->field;
 }
-
 const bool* Alphabet::L() {
 	Letter* letter =  new Letter();
 	letter->setColumnAs(0, true); //Set first column as true
 	letter ->setRowAs(letter->column_height - 1, true); //Set last row as true
 	return letter->field;
 }
-
-
+const bool* Alphabet::M() {
+	Letter* letter = new Letter();
+	/*Draw a block A*/
+	letter->setColumnAs(0, true); //Set first column as true
+	letter->setColumnAs(letter->row_length - 1, true); //Set last column as true
+	letter->setColumnAs(letter->row_length /2 , true); //Set middle column as true
+	letter->setRowAs(0, true); //Set first row as true
+	return letter->field;
+}
+const bool* Alphabet::N() {
+	Letter* letter = new Letter();
+	/*Draw a block A*/
+	letter->setColumnAs(0, true); //Set first column as true
+	letter->setColumnAs(letter->row_length - 1, true); //Set last column as true
+	letter->setRowAs(0, true); //Set first row as true
+	return letter->field;
+}
 void Alphabet::printLetter(const bool* r) {
 	const char* ESC = "\x1b[";
 	for (int i = 0; i < 35; i++) {
+		this_thread::sleep_for(chrono::milliseconds(100));
 		char output = r[i] ? '*' : ' ';
 		const int mod = (i) % 7 + 1;
 		cout << ESC << mod << "G" << output; // Horizontal Positioning using ANSI
@@ -49,3 +83,22 @@ void Alphabet::printLetter(const bool* r) {
 	}
 };
 
+void Alphabet::printAlphabet() {
+	printLetter(A());
+	cout << endl;
+	printLetter(C());
+	cout << endl;
+	printLetter(E());
+	cout << endl;
+	printLetter(I());
+	cout << endl;
+	printLetter(L());
+	cout << endl;
+	printLetter(M());
+	cout << endl;
+	printLetter(N());
+	cout << endl;
+}
+void Alphabet::symbolNotDefined() {
+	cout << "Symbol not defined.\n";
+}

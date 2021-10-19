@@ -33,6 +33,15 @@ const bool* Alphabet::E() {
 	letter->setRowAs(letter->column_height - 1, true); //Set last row as true
 	return letter->field;
 }
+const bool* Alphabet::F() {
+	Letter* letter = new Letter();
+	/*Draw a block F*/
+	letter->setColumnAs(0, true); //Set first column as true
+
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height / 2, true, 0, 5); //Set middle row as true
+	return letter->field;
+}
 const bool* Alphabet::I() {
 	Letter* letter = new Letter();
 	letter->setRowAs(0, true); //Set first row as true

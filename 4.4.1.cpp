@@ -111,7 +111,7 @@ int main() {
 				break;
 			case 'F':
 			case 'f':
-				alphabet->symbolNotDefined();
+				alphabet->printLetter(alphabet->F());
 				break;
 			case 'I':
 			case 'i':

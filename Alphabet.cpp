@@ -29,7 +29,7 @@ const bool* Alphabet::E() {
 	letter->setColumnAs(0, true); //Set first column as true
 
 	letter->setRowAs(0, true); //Set first row as true
-	letter->setRowAs(letter->column_height/ 2, true); //Set middle row as true
+	letter->setRowAs(letter->column_height/ 2, true, 0, 5); //Set middle row as true
 	letter->setRowAs(letter->column_height - 1, true); //Set last row as true
 	return letter->field;
 }

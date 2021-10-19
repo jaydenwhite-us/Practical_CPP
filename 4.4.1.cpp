@@ -33,6 +33,17 @@ form of the letter.
 ** Test Phase 6 - Create a Letter Class and an Alphabet Class. Print the Letter A;
 ** Test Phase 7 - Create a Letter Class and an Alphabet Class. Print the Letter N;
 ** Test Phase 8 - Collect string input ;
+** 10/17/2020
+** Added Letters A, C, E, I, L, M, N
+** Test Phase 9 - adjust Letter.setRowAs() to take allow specifying an integer
+	start and end column. Otherwise default to zero.
+	If I specify start, it should print from new start to the end of the row.
+	If I specify end, it should print from start to to the new end of the row.
+	If I specify a start and end, it should inclusively set those points in the field to true.
+
+** Parameterized setRowAs to allow start and end column.
+** Adjusted style of E
+
 */
 #include "Alphabet.h"
 #include <iostream>

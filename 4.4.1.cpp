@@ -140,6 +140,14 @@ int main() {
 			case 's':
 				alphabet->printLetter(alphabet->S());
 				break;
+			case 'T':
+			case 't':
+				alphabet->printLetter(alphabet->T());
+				break;
+			case 'U':
+			case 'u':
+				alphabet->printLetter(alphabet->U());
+				break;
 			default:
 				cout << "default case";
 				alphabet->symbolNotDefined();

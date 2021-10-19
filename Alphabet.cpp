@@ -93,13 +93,27 @@ const bool* Alphabet::P() {
 
 const bool* Alphabet::S() {
 	Letter* letter = new Letter();
-	/*Draw a block P*/
-	letter->setColumnAs(letter->row_length - 1, true, letter->column_height/2, letter->column_height); //Set bottom half of first column
-	letter->setColumnAs(0, true, 0, letter->column_height / 2); //Set top half of last column
+	/*Draw a block S*/
+	letter->setColumnAs(letter->row_length - 1, true, letter->column_height/2, letter->column_height); //Set bottom half of first column as true
+	letter->setColumnAs(0, true, 0, letter->column_height / 2); //Set top half of last column as true
 
 	letter->setRowAs(0, true); //Set first row as true
 	letter->setRowAs(letter->column_height / 2, true); //Set middle row as true.
 	letter->setRowAs(letter->column_height - 1, true); //Set last row as true.
+	return letter->field;
+}
+
+const bool* Alphabet::T() {
+	Letter* letter = new Letter();
+	letter->setRowAs(0, true);
+	letter->setColumnAs(letter->row_length / 2, true);
+	return letter->field;
+}
+const bool* Alphabet::U() {
+	Letter* letter = new Letter();
+	letter->setRowAs(letter->column_height-1, true);
+	letter->setColumnAs(0, true);
+	letter->setColumnAs(letter->row_length-1, true);
 	return letter->field;
 }
 void Alphabet::printLetter(const bool* r) {

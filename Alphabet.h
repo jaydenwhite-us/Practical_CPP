@@ -10,6 +10,7 @@ public:
 	const bool* G();
 	const bool* H();
 	const bool* I();
+	const bool* J();
 	const bool* L();
 	const bool* M();
 	const bool* N();

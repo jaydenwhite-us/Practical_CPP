@@ -127,9 +127,13 @@ int main() {
 			case 'i':
 				alphabet->printLetter(alphabet->I());
 				break;
+			case 'J':
+			case 'j':
+				alphabet->printLetter(alphabet->J());
+				break;
 			case 'L':
 			case 'l':
-				alphabet->printLetter(alphabet->L());
+				alphabet->printLetter(alphabet->J());
 				break;
 			case 'M':
 			case 'm':

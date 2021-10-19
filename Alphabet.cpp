@@ -4,6 +4,7 @@
 #include <iostream>
 #include <thread>
 using namespace std;
+//I think providing an interface might help some of this code...
 
 const bool* Alphabet::A() {
 	Letter* letter = new Letter();
@@ -79,6 +80,22 @@ const bool* Alphabet::I() {
 		letter->setColumnAs((letter->row_length / 2), true);
 		letter->setColumnAs((letter->row_length / 2) + 1, true);
 	}//Set middle Column as True;
+	return letter->field;
+}
+
+const bool* Alphabet::J() {
+	Letter* letter = new Letter();
+	int right_edge = (letter->row_length) - 1; //Define right edge of field in zero_index
+	int middle_row = (letter->column_height) / 2;
+	int middle_column = (letter->row_length) / 2;
+	int bottom_edge = (letter->column_height) - 1; //Define bottom edge of field in zero_index
+	
+	/*Draw block J*/
+	letter->setColumnAs(right_edge, true);//Set far right column as true
+	letter->setColumnAs(0, true, middle_row+1);//Set part of first column as true
+	
+	letter->setRowAs(0, true, middle_column); //Set part of top row as true
+	letter->setRowAs(bottom_edge, true);//Set bottom row as true
 	return letter->field;
 }
 const bool* Alphabet::L() {

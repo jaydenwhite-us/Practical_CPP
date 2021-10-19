@@ -1,6 +1,8 @@
 #pragma once
 /*
 * A Letter is defined as an array of length 35.
+* I need to adjust Letter.h to use zero index or
+*	1 index. Please open issue in git.
 */
 class Letter {
 

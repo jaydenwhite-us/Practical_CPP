@@ -115,6 +115,10 @@ int main() {
 			case 'f':
 				alphabet->printLetter(alphabet->F());
 				break;
+			case 'G':
+			case 'g':
+				alphabet->printLetter(alphabet->G());
+				break;
 			case 'I':
 			case 'i':
 				alphabet->printLetter(alphabet->I());

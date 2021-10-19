@@ -42,6 +42,21 @@ const bool* Alphabet::F() {
 	letter->setRowAs(letter->column_height / 2, true, 0, 5); //Set middle row as true
 	return letter->field;
 }
+const bool* Alphabet::G() {
+	Letter* letter = new Letter();
+	int zero_index_row_end = (letter->row_length) - 1;
+	int middle_row = (letter->column_height) / 2;
+	int middle_column = (letter->row_length) / 2;
+	int zero_index_column_bottom = (letter->column_height) - 1;
+	/*Draw a block G*/
+	letter->setColumnAs(0, true);//Set left column as true.
+	letter->setColumnAs(zero_index_row_end, true, ((letter->column_height) / 2)  );//Set bottom part of right column as true.
+
+	letter->setRowAs(0, true);//Set top row as true;
+	letter->setRowAs(middle_row, true, middle_column);//Set last part of middle row as true.
+	letter->setRowAs(zero_index_column_bottom, true);//Set bottom row as true;
+	return letter->field; //Return Letter field.
+}
 const bool* Alphabet::I() {
 	Letter* letter = new Letter();
 	letter->setRowAs(0, true); //Set first row as true

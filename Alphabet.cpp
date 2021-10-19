@@ -16,6 +16,20 @@ const bool* Alphabet::A() {
 	letter->setRowAs(letter->column_height / 2, true); //Set middle row as true;
 	return letter->field;
 }
+const bool* Alphabet::B() {
+	Letter* letter = new Letter();
+	const int right_edge = (letter->row_length) - 1;
+	const int bottom_edge = (letter->column_height) - 1;
+	const int inset = 1;
+	/*Draw a block B*/
+	letter->setColumnAs(inset, true); //Set inset column as true
+	letter->setColumnAs(right_edge, true); //Set last column as true
+
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height / 2, true, inset); //Set oart of middle row as true
+	letter->setRowAs(bottom_edge, true);//Set last row as true
+	return letter->field;
+}
 const bool* Alphabet::C() {
 	Letter* letter = new Letter();
 	/*Draw a block C*/
@@ -120,6 +134,19 @@ const bool* Alphabet::N() {
 	letter->setColumnAs(letter->row_length - 1, true); //Set last column as true
 	letter->setRowAs(0, true); //Set first row as true
 	return letter->field;
+}
+const bool* Alphabet::O() {
+	Letter* letter = new Letter();
+	int right_edge = (letter->row_length) - 1; //Define right edge of field in zero_index
+	int bottom_edge = (letter->column_height) - 1; //Define bottom edge of field in zero_index
+
+	/*Draw a block O*/
+	letter->setColumnAs(0, true);//Set left column as true
+	letter->setColumnAs(right_edge, true);//Set right column as true
+	letter->setRowAs(0, true);//Set top row as true
+	letter->setRowAs(bottom_edge, true);//Set bottom row as true
+
+	return letter->field;//return field
 }
 
 const bool* Alphabet::P() {

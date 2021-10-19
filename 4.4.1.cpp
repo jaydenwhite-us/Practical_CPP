@@ -97,7 +97,7 @@ int main() {
 				break;
 			case 'B':
 			case 'b':
-				alphabet->symbolNotDefined();
+				alphabet->printLetter(alphabet->B());
 				break;
 			case 'C':
 			case 'c':
@@ -143,6 +143,10 @@ int main() {
 			case 'n':
 				if(itr+1!= user_input.end())
 				alphabet->printLetter(alphabet->N());
+				break;
+			case 'O':
+			case 'o':
+					alphabet->printLetter(alphabet->O());
 				break;
 			case 'P':
 			case 'p':

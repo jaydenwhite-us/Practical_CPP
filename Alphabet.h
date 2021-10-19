@@ -4,6 +4,7 @@ class Alphabet
 {
 public:
 	const bool* A();
+	const bool* B();
 	const bool* C();
 	const bool* E();
 	const bool* F();
@@ -14,6 +15,7 @@ public:
 	const bool* L();
 	const bool* M();
 	const bool* N();
+	const bool* O();
 	const bool* P();
 	const bool* S();
 	const bool* T();

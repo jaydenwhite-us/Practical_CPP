@@ -57,6 +57,16 @@ const bool* Alphabet::G() {
 	letter->setRowAs(zero_index_column_bottom, true);//Set bottom row as true;
 	return letter->field; //Return Letter field.
 }
+
+const bool* Alphabet::H() {
+	Letter* letter = new Letter();
+	int zero_index_row_end = (letter->row_length) - 1;
+	int middle_row = (letter->column_height) / 2;
+	letter->setColumnAs(0, true); //Set left column as true.
+	letter->setColumnAs(zero_index_row_end, true);//Set right column as true.
+	letter->setRowAs(middle_row, true); //Set middle row as true.
+	return letter->field;
+}
 const bool* Alphabet::I() {
 	Letter* letter = new Letter();
 	letter->setRowAs(0, true); //Set first row as true

@@ -8,6 +8,7 @@ public:
 	const bool* E();
 	const bool* F();
 	const bool* G();
+	const bool* H();
 	const bool* I();
 	const bool* L();
 	const bool* M();

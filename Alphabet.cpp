@@ -79,6 +79,29 @@ const bool* Alphabet::N() {
 	letter->setRowAs(0, true); //Set first row as true
 	return letter->field;
 }
+
+const bool* Alphabet::P() {
+	Letter* letter = new Letter();
+	/*Draw a block P*/
+	letter->setColumnAs(0, true); //Set first column as true
+	letter->setColumnAs(letter->row_length - 1, true, 0, letter->column_height / 2); //Set top half of last column
+
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height / 2, true); //Set middle row as true
+	return letter->field;
+}
+
+const bool* Alphabet::S() {
+	Letter* letter = new Letter();
+	/*Draw a block P*/
+	letter->setColumnAs(0, true); //Set first column as true
+	letter->setColumnAs(letter->row_length - 1, true, 0, letter->column_height / 2); //Set top half of last column
+
+	letter->setRowAs(0, true); //Set first row as true
+	letter->setRowAs(letter->column_height / 2, true); //Set middle row as true.
+	letter->setRowAs(letter->column_height-1, true) //Set last row as true.
+	return letter->field;
+}
 void Alphabet::printLetter(const bool* r) {
 	const char* ESC = "\x1b[";
 	for (int i = 0; i < 35; i++) {

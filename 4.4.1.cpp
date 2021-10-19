@@ -33,16 +33,17 @@ form of the letter.
 ** Test Phase 6 - Create a Letter Class and an Alphabet Class. Print the Letter A;
 ** Test Phase 7 - Create a Letter Class and an Alphabet Class. Print the Letter N;
 ** Test Phase 8 - Collect string input ;
-** 10/17/2020
+** 10/17/2021
 ** Added Letters A, C, E, I, L, M, N
 ** Test Phase 9 - adjust Letter.setRowAs() to take allow specifying an integer
 	start and end column. Otherwise default to zero.
 	If I specify start, it should print from new start to the end of the row.
 	If I specify end, it should print from start to to the new end of the row.
 	If I specify a start and end, it should inclusively set those points in the field to true.
-
+** 10/19/2021
 ** Parameterized setRowAs to allow start and end column.
 ** Adjusted style of E
+** setColumnAs to allow start and end column.
 
 */
 #include "Alphabet.h"
@@ -124,10 +125,15 @@ int main() {
 			case 'M':
 			case 'm':
 				alphabet->printLetter(alphabet->M());
+				break;
 			case 'N':
 			case 'n':
 				if(itr+1!= user_input.end())
 				alphabet->printLetter(alphabet->N());
+				break;
+			case 'P':
+			case 'p':
+				alphabet->printLetter(alphabet->P());
 				break;
 			default:
 				cout << "default case";

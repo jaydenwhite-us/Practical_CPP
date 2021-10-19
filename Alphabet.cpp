@@ -26,7 +26,20 @@ const bool* Alphabet::B() {
 	letter->setColumnAs(right_edge, true); //Set last column as true
 
 	letter->setRowAs(0, true); //Set first row as true
-	letter->setRowAs(letter->column_height / 2, true, inset); //Set oart of middle row as true
+	letter->setRowAs(letter->column_height / 2, true, inset); //Set part of middle row as true
+	letter->setRowAs(bottom_edge, true);//Set last row as true
+	return letter->field;
+}
+const bool* Alphabet::D() {
+	Letter* letter = new Letter();
+	const int right_edge = (letter->row_length) - 1;
+	const int bottom_edge = (letter->column_height) - 1;
+	const int inset = 1;
+	/*Draw a block D*/
+	letter->setColumnAs(inset, true); //Set inset column as true
+	letter->setColumnAs(right_edge, true); //Set last column as true
+
+	letter->setRowAs(0, true); //Set first row as true
 	letter->setRowAs(bottom_edge, true);//Set last row as true
 	return letter->field;
 }

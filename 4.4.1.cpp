@@ -105,7 +105,7 @@ int main() {
 				break;
 			case 'D':
 			case 'd':
-				alphabet->symbolNotDefined();
+				alphabet->printLetter((alphabet->D()));
 				break;
 			case 'E':
 			case 'e':

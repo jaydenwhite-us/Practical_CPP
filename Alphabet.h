@@ -6,6 +6,7 @@ public:
 	const bool* A();
 	const bool* B();
 	const bool* C();
+	const bool* D();
 	const bool* E();
 	const bool* F();
 	const bool* G();

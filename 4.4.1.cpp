@@ -43,8 +43,9 @@ form of the letter.
 ** 10/19/2021
 ** Parameterized setRowAs to allow start and end column.
 ** Adjusted style of E
-** setColumnAs to allow start and end column.
-
+** Parameterized setColumnAs to allow start and end row.
+** Added a P
+** Added an S
 */
 #include "Alphabet.h"
 #include <iostream>
@@ -134,6 +135,10 @@ int main() {
 			case 'P':
 			case 'p':
 				alphabet->printLetter(alphabet->P());
+				break;
+			case 'S':
+			case 's':
+				alphabet->printLetter(alphabet->S());
 				break;
 			default:
 				cout << "default case";

@@ -12,6 +12,7 @@ public:
 	const bool* M();
 	const bool* N();
 	const bool* P();
+	const bool* S();
 	void printLetter(const bool*);
 	void printAlphabet();
 	void symbolNotDefined();

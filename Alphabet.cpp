@@ -116,6 +116,18 @@ const bool* Alphabet::U() {
 	letter->setColumnAs(letter->row_length-1, true);
 	return letter->field;
 }
+
+const bool* Alphabet::W() {
+	Letter* letter = new Letter();
+	letter->setRowAs(letter->column_height - 1, true); //Set bottom row as true.
+
+	letter->setColumnAs(0, true); // Set first column as true.
+	int height = letter->column_height;
+	height /= 2; height += 1;
+	letter->setColumnAs(letter->row_length / 2, true, height); //Set middle column as true.
+	letter->setColumnAs(letter->row_length - 1, true); // Set last column as true.
+	return letter->field;
+}
 void Alphabet::printLetter(const bool* r) {
 	const char* ESC = "\x1b[";
 	for (int i = 0; i < 35; i++) {

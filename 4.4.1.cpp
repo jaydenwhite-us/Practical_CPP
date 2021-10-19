@@ -148,6 +148,10 @@ int main() {
 			case 'u':
 				alphabet->printLetter(alphabet->U());
 				break;
+			case 'W':
+			case 'w':
+				alphabet->printLetter(alphabet->W());
+				break;
 			default:
 				cout << "default case";
 				alphabet->symbolNotDefined();
